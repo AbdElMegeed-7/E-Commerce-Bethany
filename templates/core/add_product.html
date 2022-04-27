@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add-Product</title>
+</head>
+<body>
+    <form action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1>Add Product</h1>
+      {{ form.as_p }}
+      <!-- {% for field in form.visible_field %} -->
+        <div class="form-group">
+          {{ form.as_p }}
+          <!-- {{ field.label_tag }}
+          {{ field }} -->
+        </div>
+      <!-- {% endfor %} -->
+      <!-- <input type="submit" name="add_product" id="add_product" class="btn btn-block login-btn" value="Add Product">
+      <button type="submit">Add Product</button> -->
+      <!-- {% if messages %}
+        {% for message in messages %}
+          <h1 class="badge badge-light" style="color:red;">{{ message }}</h1>
+        {% endfor %}
+      {% endif %} -->
+    </form>
+</body>
+</html>
