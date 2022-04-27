@@ -52,9 +52,14 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="getstarted scrollto" href="#about">Log In</a></li>
-            <li><a class="getstarted scrollto" href="#about">Register</a></li>
-          </ul>
+            {% if user.is_authenticated %}
+              <li><a class="getstarted scrollto" href="{% url 'user_logout' %}">Log Out </a></li>
+
+            {% else %}
+              <li><a class="getstarted scrollto" href="{% url 'user_login' %}">Log In</a></li>
+              <li><a class="getstarted scrollto" href="{% url 'user_register' %}">Register</a></li>
+            {% endif %}
+            </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
