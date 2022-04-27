@@ -15,6 +15,11 @@
       <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
       <input type="text" name="phone_field" id="phone_field" placeholder="Phone Number">
       <button type="submit">Register</button>
+      {% if messages %}
+        {% for message in messages %}
+          <h1 class="badge badge-light" style="color:red;">{{ message }}</h1>
+        {% endfor %}
+      {% endif %}
     </form>
 </body>
 </html>

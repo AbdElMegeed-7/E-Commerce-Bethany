@@ -12,6 +12,11 @@
       <input type="text" name="username" id="username" placeholder="UserName">
       <input type="password" name="password" id="password" placeholder="PassWord">
       <button type="submit">Log-In</button>
+      {% if messages %}
+        {% for message in messages %}
+          <h1 class="badge badge-light" style="color:red;">{{ message }}</h1>
+        {% endfor %}
+      {% endif %}
     </form>
 </body>
 </html>
