@@ -112,6 +112,35 @@
     </section><!-- End About Section -->
 
 
+    <!-- Start Product Card -->
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for product in products %}  
+        <div class="col">
+          <div class="cart">
+            
+            <img src="{{ product.image.url }}" alt="" class="card-image-top">
+            <div class="card-body">
+              <h1 class="card-title">{{ product.name}}</h1>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Category</b>:  {{ product.category.category_name }}</li>
+              <li class="list-group-item"><b>price</b>:  {{ product.price }}</li>
+            </ul>
+
+            <div class="card-footer" style="background-color:white">
+            <a href="" class="btn btn-dark">ViewMore</a>
+            </div>  
+
+          </div>
+        </div>
+      {% endfor %}  
+      </div>
+    </div>
+    <!-- End Card  -->
+
+
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">

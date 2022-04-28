@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import *
 
 
 def index(request):
-    return render(request, 'core/index.html')
+    products = Product.objects.all()
+    context = {"products": products}
+    return render(request, 'core/index.html', context)
 
 
 def add_product(request):
