@@ -18,3 +18,9 @@ def add_product(request):
     else:
         form = ProductForm()
     return render(request, 'core/add_product.html', {"form": form})
+
+
+def product_desc(request, pk):
+    products = Product.objects.get(pk=pk)
+    context = {"products": products}
+    return render(request, 'core/product_desc.html', context)
